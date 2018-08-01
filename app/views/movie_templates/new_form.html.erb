@@ -1,3 +1,15 @@
+<% if @movie.present? %>
+  <% @movie.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<% end %>
+
+<% end %>
 <h1>
   Add a new movie
 </h1>
@@ -41,6 +53,15 @@
     <textarea id="description" name="description" class="form-control" rows="3"></textarea>
   </div>
 
+  <!-- Label and input for director_id -->
+  <div class="form-group">
+    <label for="director_id">
+      Description
+    </label>
+
+    <input type="text" id="director_id" name="director_id" class="form-control">
+  </div>
+  
   <!-- Label and input for image_url -->
   <div class="form-group">
     <label for="image_url">
